@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عرض الصورة والفيديو</title>
+    <style>
+        /* تعيين صورة خلفية للموقع */
+        body {
+            background-image: url('Backround-imii.jpg'); /* تأكد من أن الصورة موجودة في نفس المجلد */
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+        }
+
+        /* إخفاء الصور والنص والفيديو في البداية */
+        #image, #message, #video {
+            display: none;
+            width: 300px;
+            height: auto;
+        }
+
+        /* تنسيق النص المضئ باللون الأبيض */
+        #message {
+            color: white; /* تغيير اللون إلى الأبيض */
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+
+        /* تأثير الوميض للنص */
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white, 0 0 20px white;
+            }
+            100% {
+                text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px white;
+            }
+        }
+
+        /* تصغير حجم الفيديو */
+        #video {
+            width: 50%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+
+        /* تنسيق الزر ليكون كبيرًا ولونه أحمر */
+        button {
+            font-size: 20px;
+            padding: 20px 40px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="showContent()">اضغط هنا لرؤية وردة الكريسميس</button>
+
+    <img id="image" src="imane-oujda.jpg" alt="وردة الكريسميس">
+
+    <div id="message">
+        إلى صديقتي الغالية،<br>
+        إلى وردة الكريسميس الذي اسمها إيمان<br>
+        مع بداية هذا العام الجديد، أتمنى لكِ أيامًا مليئة بالسعادة والفرح، وأحلامًا تتحقق واحدة تلو الأخرى.<br>
+        أنتِ صديقة مميزة أعتز بوجودها في حياتي، ودائمًا أتمنى لكِ الأفضل.<br>
+        كل عام وأنتِ بخير، وعام سعيد مليء بالنجاحات واللحظات الجميلة
+    </div>
+
+    <iframe id="video" src="https://www.youtube.com/embed/19StO6rP_Q8?autoplay=1&start=36" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+    <script>
+        function showContent() {
+            document.getElementById('image').style.display = 'block';
+            document.getElementById('message').style.display = 'block';
+            document.getElementById('video').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
